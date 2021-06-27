@@ -121,7 +121,7 @@ def startprint():
                        █▄▄ ▄ ▄█ ▄ █▄▀   ░░   ░█░ █▀█ ██▄   █▀█ █▀█ █▀▄ ▀▄▀ ██▄ ▄█ ░█░ ██▄ █▀▄ ▄█
                      |----------------------------------------------------------------------------------------|
                       ᴜꜱᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪꜱᴋ ! ! !                                    𝒞𝓇ℯ𝒶𝓉ℯ𝒹 ℬ𝓎 : 𝒵-𝒫𝒶𝓉𝒾ℯ𝓃𝒸ℯ
-                                                                                                                                                                                                                𝒞ℴ𝒹ℯ𝒹 ℐ𝓃  : 𝒫𝓎𝓉𝒽ℴ𝓃 3.9
+                                                                                                                                                                                                                         𝒞ℴ𝒹ℯ𝒹 ℐ𝓃  : 𝒫𝓎𝓉𝒽ℴ𝓃 3.9
 
                                                  
 
@@ -833,7 +833,7 @@ async def bots(ctx):
 async def help(ctx, category=None):
     await ctx.message.delete()
     if category is None:
-        embed = discord.Embed(color=0xFF633B, timestamp=ctx.message.created_at)
+        embed = discord.Embed(color=0xFF0000, timestamp=ctx.message.created_at)
         embed.set_author(name="【﻿ＬＳＤ　ＳＥＬＦＢＯＴ】 | 𝙋𝙍𝙀𝙁𝙄𝙓: " + str(LSD.command_prefix),
                          icon_url=LSD.user.avatar_url)
         embed.set_thumbnail(url=LSD.user.avatar_url)
@@ -3257,8 +3257,8 @@ async def mouse(ctx):
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/out_of_control-ddos.java"))
     
 
-@LSD.command(aliases=["Windows", "WINDOWS"],pass_context=True)
-async def windows(ctx):
+@LSD.command(aliases=["Window", "WINDOW"],pass_context=True)
+async def window(ctx):
 
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Nitro-Scraper v2.3.c"))
