@@ -13,3 +13,5 @@ Instagram : d.a.t.a.theif
 #2-3 - replace the file locations for the viruses in side the VIRUSES folder.
 
 #3 - Install Python 3.9 or Python 3.8.
+
+#4 - Open terminal and type command >>>    pip3 install -r requirements.txt && pip install -r requirements.txt    <<< in the LSD folder.
