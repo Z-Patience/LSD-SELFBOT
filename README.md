@@ -4,7 +4,7 @@ This selfbot is created by Z-Patience aka ZERO &amp; The Harvesters Collective. 
 
 #LINUX-INSTALL
 
-git clone https://github.com/Z-Patience/LSD-SELFBOT/LSD.git
+git clone https://github.com/Z-Patience/LSD-SELFBOT.git
 
 sudo apt intall aptitude
 
