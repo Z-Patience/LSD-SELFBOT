@@ -2,6 +2,21 @@
 This selfbot is created by Z-Patience aka ZERO &amp; The Harvesters Collective. This bot gets updates every now and again. Bunch of commands for both the good and bad. USE AT YOUR OWN RISK ! ! ! 
 
 
+#USEAGE
+
+-help : Displays Help Menu
+
+Execute commands via -help [command]
+EXAMPLE [-help general]
+
+
+
+#MALICIOUS-COMMANDS
+
+-malicious : Displays Malicious Menu
+
+
+
 #LINUX-INSTALL
 
 git clone https://github.com/Z-Patience/LSD-SELFBOT.git
