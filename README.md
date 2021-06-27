@@ -15,6 +15,7 @@ sudo pip3 install dhooks && sudo pip install dhooks && sudo pip3 discord_webhook
 #ALTERNATE-INSTALL
 
 if you want to make your job easier just run the following command in the LSD folder
+
 sudo pip3 install -r requirements.txt && sudo pip install -r requirements.txt
 
 
