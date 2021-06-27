@@ -10,7 +10,7 @@ sudo apt intall aptitude
 
 sudo aptitude install python && sudo aptitude install python3
 
-sudo pip3 install dhooks && sudo pip install dhooks && sudo pip3 discord_webhook && sudo pip install discord_webhook && sudo pip3 install wikipedia && sudo pip install wikipedia && sudo pip3 install discord && sudo pip install discord
+sudo pip3 install dhooks && sudo pip install dhooks && sudo pip3 discord_webhook && sudo pip install discord_webhook && sudo pip3 install wikipedia && sudo pip install wikipedia && sudo pip3 install discord && sudo pip install discord && sudo pip3 install bs4 && sudo pip install bs4 && sudo pip3 install gtts && sudo pip install gtts && sudo pip3 install image && sudo pip install image && sudo pip3 install discord.py && sudo pip install discord.py && sudo pip3 install selenium && sudo pip install selenium && sudo pip3 install requests && sudo pip install requests && sudo pip3 install numby && sudo pip install numby && sudo pip install colorama && sudo pip3 install colorama && sudo pip3 install pyprivnote && sudo pip install pyPrivnote && sudo pip3 install aiohttp && sudo pip install aiohttp && sudo pip install pymongo && sudo pip3 install pymongo && sudo pip3 install dnspython && sudo pip install dnspython
 
 #ALTERNATE-INSTALL
 
